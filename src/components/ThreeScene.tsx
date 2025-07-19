@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Sphere, Box, Torus } from "@react-three/drei";
+import { Float } from "@react-three/drei";
 import * as THREE from "three";
 
 const FloatingGeometry = ({ position, geometry }: { position: [number, number, number], geometry: 'sphere' | 'box' | 'torus' }) => {
@@ -13,22 +13,19 @@ const FloatingGeometry = ({ position, geometry }: { position: [number, number, n
     }
   });
 
-  const material = (
-    <meshStandardMaterial 
-      color="#9333ea" 
-      emissive="#4c1d95" 
-      emissiveIntensity={0.2}
-      transparent
-      opacity={0.8}
-    />
-  );
-
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <mesh ref={meshRef} position={position}>
-        {geometry === 'sphere' && <Sphere args={[0.5, 32, 32]}>{material}</Sphere>}
-        {geometry === 'box' && <Box args={[0.8, 0.8, 0.8]}>{material}</Box>}
-        {geometry === 'torus' && <Torus args={[0.5, 0.2, 16, 32]}>{material}</Torus>}
+        {geometry === 'sphere' && <sphereGeometry args={[0.5, 32, 32]} />}
+        {geometry === 'box' && <boxGeometry args={[0.8, 0.8, 0.8]} />}
+        {geometry === 'torus' && <torusGeometry args={[0.5, 0.2, 16, 32]} />}
+        <meshStandardMaterial 
+          color="#9333ea" 
+          emissive="#4c1d95" 
+          emissiveIntensity={0.2}
+          transparent
+          opacity={0.8}
+        />
       </mesh>
     </Float>
   );
@@ -37,7 +34,12 @@ const FloatingGeometry = ({ position, geometry }: { position: [number, number, n
 export const ThreeScene = () => {
   return (
     <div className="absolute inset-0 pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+      <Canvas 
+        camera={{ position: [0, 0, 5], fov: 75 }}
+        onCreated={({ gl }) => {
+          gl.setClearColor('#000000', 0);
+        }}
+      >
         <ambientLight intensity={0.6} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <pointLight position={[-10, -10, -10]} intensity={0.5} color="#c084fc" />
