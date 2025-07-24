@@ -12,7 +12,7 @@ import { Projects } from "@/pages/Projects";
 import { Contact } from "@/pages/Contact";
 import NotFound from "./pages/NotFound";
 import { Skills } from "@/pages/Skills";
-import { Resume } from "./Resume";
+
 
 
 
