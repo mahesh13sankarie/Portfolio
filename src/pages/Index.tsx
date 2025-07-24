@@ -1,13 +1,21 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Home } from "./Home";
+import { About } from "./About";
+import { Projects } from "./Projects";
+import { Skills } from "./skills";
+import { Resume } from "./Resume";
+import { Contact } from "./Contact";
+
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Home />
+      <About />
+      <Projects />
+      <Skills />
+      <Resume />
+      <Contact />
+    </>
   );
 };
 

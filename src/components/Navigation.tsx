@@ -7,11 +7,9 @@ import { Button } from "@/components/ui/button";
 const navigationItems = [
   { name: "Home", path: "/", icon: Home },
   { name: "About", path: "/about", icon: User },
-  { name: "Projects", path: "/projects", icon: Briefcase },
+  { name: "Experience", path: "/projects", icon: Briefcase },
   { name: "Skills", path: "/skills", icon: Code },
   { name: "Resume", path: "/resume", icon: FileText },
-  { name: "Articles", path: "/articles", icon: BookOpen },
-  { name: "Profiles", path: "/profiles", icon: Github },
   { name: "Contact", path: "/contact", icon: Mail },
 ];
 

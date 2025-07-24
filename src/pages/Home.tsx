@@ -28,13 +28,23 @@ export const Home = () => {
     },
   };
 
+  // 🔽 Scroll to About Section
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn("⚠️ Couldn't find #about section in DOM");
+    }
+  };
+
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-x-hidden">
       {/* Background Elements */}
       <ParticleBackground />
       <ThreeScene />
-      
-      {/* Content */}
+
+      {/* Main Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -42,39 +52,40 @@ export const Home = () => {
         className="relative z-10 text-center px-6 max-w-4xl mx-auto"
       >
         <motion.div variants={itemVariants} className="mb-8">
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
             whileHover={{ scale: 1.02 }}
           >
             Hi, I'm{" "}
             <span className="gradient-text glow-text">
-              Your Name
+              Maheshvari Periyasamy Nallasamy
             </span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl md:text-2xl text-muted-foreground mb-8"
             variants={itemVariants}
           >
             A passionate{" "}
-            <span className="text-primary font-semibold">Full-Stack Developer</span>
-            {" "}& <span className="text-accent font-semibold">UI/UX Designer</span>
+            <span className="text-primary font-semibold">Software </span>
+            & <span className="text-accent font-semibold">Web Developer</span>
             <br />
             crafting digital experiences that inspire and innovate
           </motion.p>
         </motion.div>
 
-        <motion.div 
+        {/* Buttons */}
+        <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="group relative overflow-hidden bg-primary hover:bg-primary/90 glow-primary"
             asChild
           >
             <a href="/projects">
-              <motion.span 
+              <motion.span
                 className="relative z-10 flex items-center gap-2"
                 whileHover={{ x: 5 }}
               >
@@ -83,15 +94,15 @@ export const Home = () => {
               </motion.span>
             </a>
           </Button>
-          
-          <Button 
-            size="lg" 
-            variant="outline" 
+
+          <Button
+            size="lg"
+            variant="outline"
             className="group border-primary/30 hover:border-primary hover:bg-primary/10"
             asChild
           >
             <a href="/resume.pdf" download>
-              <motion.span 
+              <motion.span
                 className="flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
               >
@@ -102,13 +113,14 @@ export const Home = () => {
           </Button>
         </motion.div>
 
-        <motion.div 
+        {/* Social Icons */}
+        <motion.div
           variants={itemVariants}
           className="flex justify-center gap-6 mb-16"
         >
           {[
-            { icon: Github, href: "https://github.com", label: "GitHub" },
-            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+            { icon: Github, href: "https://github.com/mahesh13sankarie", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/maheshvaripn/", label: "LinkedIn" },
           ].map(({ icon: Icon, href, label }) => (
             <motion.a
               key={label}
@@ -125,20 +137,17 @@ export const Home = () => {
           ))}
         </motion.div>
 
+        {/* Scroll Arrow (Down) */}
         <motion.div
           variants={itemVariants}
-          animate={{
-            y: [0, -10, 0],
-          }}
+          animate={{ y: [0, -10, 0] }}
           transition={{
             duration: 2,
             repeat: Infinity,
             ease: "easeInOut",
           }}
           className="cursor-pointer"
-          onClick={() => {
-            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-          }}
+          onClick={scrollToAbout}
         >
           <ChevronDown size={32} className="text-muted-foreground hover:text-primary transition-colors mx-auto" />
         </motion.div>

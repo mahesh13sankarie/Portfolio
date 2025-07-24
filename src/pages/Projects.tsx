@@ -6,60 +6,42 @@ import { Badge } from "@/components/ui/badge";
 
 export const Projects = () => {
   const projects = [
+    
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: true,
-    },
-    {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      tech: ["React", "Firebase", "TypeScript", "Tailwind"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: false,
-    },
-    {
-      title: "AI-Powered Analytics",
-      description: "Machine learning dashboard for data visualization and predictive analytics. Built with Python backend and React frontend.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      tech: ["Python", "React", "TensorFlow", "Chart.js"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: true,
-    },
-    {
-      title: "Social Media Platform",
-      description: "A modern social media platform with real-time messaging, post sharing, and advanced privacy controls.",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-      tech: ["Next.js", "MongoDB", "Socket.io", "AWS"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: false,
-    },
-    {
-      title: "Cryptocurrency Tracker",
-      description: "Real-time cryptocurrency tracking app with portfolio management, price alerts, and market analysis tools.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop",
-      tech: ["Vue.js", "Express", "Redis", "WebSocket"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: false,
-    },
-    {
-      title: "Design System Library",
-      description: "A comprehensive design system with reusable components, documentation, and theming capabilities for enterprise applications.",
+      title: "Project Development and Management- BEL (Aerospace and Defence Electronics Company)",
+      description: "At BEL, I was actively involved in the development and testing of the ADLSM system and contributed to key components of the Hex 1.2 Dev_Linkryptor project. My work included assisting with firmware verification, bug tracking, and documentation of development procedures. I also collaborated with cross-functional teams to troubleshoot technical issues and support quality assurance processes. In parallel, I supported project documentation, version control, and SAP tool integration to streamline internal workflows and resource management. This experience enhanced my skills in technical documentation, cross-team communication, and working within a structured R&D environment.",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
-      tech: ["React", "Storybook", "Styled Components", "TypeScript"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      featured: true,
+      tech: ["SAP Tool"],
+      
     },
+
+    {
+      title: "Internship Task- 8Queens (Startup)",
+      description: "During my internship at 8Queens Software Technologies Pvt Ltd, I completed a series of hands-on frontend development tasks designed to build my practical skills in HTML, CSS, JavaScript, jQuery, Bootstrap, and Tailwind CSS. These tasks included cloning real-world website pages, designing responsive login forms, building interactive elements such as dropdowns, popups, calculators, and experimenting with styling frameworks. Each task helped me deepen my understanding of UI/UX fundamentals, responsive design, and dynamic interactions in the browser.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      tech: ["HTML", "CSS", "Javascript", "PHP", "Laravel", "jQuery", "MySQL", "Tailwind CSS", "Bootstrap"],
+      github: "https://github.com/mahesh13sankarie/Internship_Task",
+            
+    },
+    
+    {
+      title: "Team Software Project- Solar Offset",
+      description: "Solar Offset is a web application that enables users to fund solar panel installations in countries of their choice and track the resulting carbon savings. The platform compares carbon emissions between the selected country and the UK using third-party APIs such as Electricity Maps.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      tech: ["Javascript", "CSS", "Stripe","MySQL",  "Chart.js"],
+      github: "https://github.com/mahesh13sankarie/solar-offset-project",
+      
+    },
+    {
+      title: "Dissertation Project- SmartMenu App",
+      description: "SmartMenu is a web-based mobile app that offers a multilingual, QR-enabled digital menu for contactless dining. Users can scan a QR code to access a mobile-friendly menu, browse items, select options, and place orders—no app installation required.",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Docker",  "Tailwind"],
+      github: "https://github.com",
+            
+    }
+  
+    
   ];
 
   return (
@@ -71,8 +53,8 @@ export const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-            My Projects
+          <h1 className="text-4xl md:text-6xl font-bold mb-12 gradient-text">
+            My Experience
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A showcase of my recent work, featuring full-stack applications, mobile apps, and creative experiments.
@@ -88,7 +70,7 @@ export const Projects = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className={`group hover-scale ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}
             >
-              <Card className="h-full glass border-border/30 hover:border-primary/30 transition-all duration-300 overflow-hidden">
+              <Card className="glass border-border/30 hover:border-primary/30 transition-all duration-300 overflow-hidden flex flex-col h-full">
                 <div className="relative overflow-hidden">
                   {project.featured && (
                     <div className="absolute top-4 left-4 z-10">
@@ -107,7 +89,7 @@ export const Projects = () => {
                 </div>
                 
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug break-words">
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
@@ -123,19 +105,23 @@ export const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="flex-1" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github size={16} className="mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button size="sm" className="flex-1" asChild>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink size={16} className="mr-2" />
-                        Demo
-                      </a>
-                    </Button>
+                    {project.title !== "Project Development and Management- BEL (Aerospace and Defence Electronics Company)" && (
+                      <>
+                        {project.github && (
+                          <Button size="sm" variant="outline" className="flex-1" asChild>
+                            <a href={project.github} target="_blank" rel="noopener noreferrer">
+                              <Github size={16} className="mr-2" />
+                              Code
+                            </a>
+                          </Button>
+                        )}
+                        <Button size="sm" className="flex-1" variant="default" disabled>
+                          {project.title === "Dissertation Project- SmartMenu App" ? "Ongoing" : "Completed"}
+                        </Button>
+                      </>
+                   )}
                   </div>
+
                 </CardContent>
               </Card>
             </motion.div>

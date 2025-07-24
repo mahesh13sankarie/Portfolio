@@ -11,20 +11,20 @@ export const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "hello@example.com",
-      href: "mailto:hello@example.com",
+      content: "pnmahesh13@gmail.com",
+      href: "mailto:pnmahesh13@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      content: "+44 7823715023",
+      href: "tel:+44 7823715023",
     },
     {
       icon: MapPin,
       title: "Location",
-      content: "San Francisco, CA",
-      href: "https://maps.google.com",
+      content: "Sheffield, UK",
+      href: "https://www.google.com/maps/place/Sheffield/@53.3956032,-1.6642625,11z/data=!3m1!4b1!4m6!3m5!1s0x48790aa9fae8be15:0x3e2827f5af06b078!8m2!3d53.381129!4d-1.470085!16zL20vMG03NWc?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D",
     },
   ];
 
@@ -37,7 +37,7 @@ export const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
+          <h1 className="text-4xl md:text-6xl font-bold mb-10 gradient-text">
             Get In Touch
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -54,60 +54,46 @@ export const Contact = () => {
             <h2 className="text-2xl font-bold mb-8">Send me a message</h2>
             <Card className="glass border-border/30">
               <CardContent className="p-8">
-                <form className="space-y-6">
+                <form 
+                  action="https://formsubmit.co/pnmahesh13@gmail.com" 
+                  method="POST" 
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="box" />
+                
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input 
-                        id="firstName" 
-                        placeholder="John" 
-                        className="bg-secondary/50 border-border/30 focus:border-primary/50"
-                      />
+                      <Input id="firstName" name="First Name" placeholder="First Name" className="..." />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input 
-                        id="lastName" 
-                        placeholder="Doe" 
-                        className="bg-secondary/50 border-border/30 focus:border-primary/50"
-                      />
+                      <Input id="lastName" name="Last Name" placeholder="Last Name" className="..." />
                     </div>
                   </div>
-                  
+                
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="john@example.com" 
-                      className="bg-secondary/50 border-border/30 focus:border-primary/50"
-                    />
+                    <Input id="email" name="Email" type="email" placeholder="Email" className="..." />
                   </div>
-                  
+                
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input 
-                      id="subject" 
-                      placeholder="Project Collaboration" 
-                      className="bg-secondary/50 border-border/30 focus:border-primary/50"
-                    />
+                    <Input id="subject" name="Subject" placeholder="Subject" className="..." />
                   </div>
-                  
+                
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell me about your project..." 
-                      rows={6}
-                      className="bg-secondary/50 border-border/30 focus:border-primary/50 resize-none"
-                    />
+                    <Textarea id="message" name="Message" placeholder="Tell me about your project..." className="..." />
                   </div>
-                  
-                  <Button className="w-full glow-primary group" size="lg">
+                
+                  <Button type="submit" className="w-full glow-primary group" size="lg">
                     <Send size={20} className="mr-2 group-hover:translate-x-1 transition-transform" />
                     Send Message
                   </Button>
                 </form>
+
               </CardContent>
             </Card>
           </motion.div>

@@ -6,7 +6,7 @@ export const About = () => {
   const skills = [
     {
       icon: Code,
-      title: "Full-Stack Development",
+      title: "Software Developer",
       description: "Building robust applications with modern technologies like React, Node.js, and Python.",
     },
     {
@@ -27,7 +27,7 @@ export const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-16 px-6">
+    <section id="about" className="min-h-screen pt-32 pb-16 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
+          <h1 className="text-4xl md:text-6xl font-bold mb-10 gradient-text ">
             About Me
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -63,18 +63,15 @@ export const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-6"
           >
-            <h2 className="text-3xl font-bold">Hello, I'm a Developer</h2>
+            <h2 className="text-3xl font-bold">Hello, I'm a Software Developer</h2>
             <p className="text-muted-foreground leading-relaxed">
-              With over 5 years of experience in web development, I specialize in creating 
-              modern, responsive applications that solve real-world problems. My journey 
-              started with a curiosity about how websites work, and it has evolved into 
-              a passion for crafting exceptional digital experiences.
+              I have a passion for building modern, responsive web applications that solve real-world problems...
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I believe in writing clean, maintainable code and staying up-to-date with 
-              the latest technologies. When I'm not coding, you can find me exploring 
-              new design trends, contributing to open-source projects, or mentoring 
-              aspiring developers.
+              Today, I focus on writing clean, maintainable code and delivering seamless digital experiences using technologies like HTML, CSS, JavaScript, and modern frameworks.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              I’m committed to continuous learning and keeping up with the latest tools and best practices...
             </p>
           </motion.div>
         </div>
@@ -111,6 +108,6 @@ export const About = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
