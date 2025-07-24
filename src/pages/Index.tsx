@@ -1,7 +1,7 @@
 import { Home } from "./Home";
 import { About } from "./About";
 import { Projects } from "./Projects";
-import { Skills } from "./skills";
+import { Skills } from "./Skills";
 import { Resume } from "./Resume";
 import { Contact } from "./Contact";
 
